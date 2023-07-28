@@ -55,7 +55,7 @@ export type ExtractPromise<T> = T extends Promise<infer U> ? U : never;
  * @hidden
  */
 export async function addDignosticChild<
-  Callback extends (node: DiagnosticNodeInternal) => Promise<any>
+  Callback extends (node: DiagnosticNodeInternal) => Promise<any>,
 >(
   callback: Callback,
   node: DiagnosticNodeInternal,
@@ -86,7 +86,7 @@ export async function addDignosticChild<
  * @hidden
  */
 export async function withMetadataDiagnostics<
-  Callback extends (node: DiagnosticNodeInternal) => Promise<any>
+  Callback extends (node: DiagnosticNodeInternal) => Promise<any>,
 >(
   callback: Callback,
   node: DiagnosticNodeInternal,
@@ -128,7 +128,7 @@ export async function withMetadataDiagnostics<
  * @hidden
  */
 export async function withDiagnostics<
-  Callback extends (node: DiagnosticNodeInternal) => Promise<any>
+  Callback extends (node: DiagnosticNodeInternal) => Promise<any>,
 >(
   callback: Callback,
   clientContext: ClientContext,

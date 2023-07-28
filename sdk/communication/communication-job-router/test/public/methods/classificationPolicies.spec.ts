@@ -29,9 +29,8 @@ describe("JobRouterClient", function () {
 
   describe("Classification Policy Operations", function () {
     this.beforeEach(async function (this: Context) {
-      ({ administrationClient, recorder } = await createRecordedRouterClientWithConnectionString(
-        this
-      ));
+      ({ administrationClient, recorder } =
+        await createRecordedRouterClientWithConnectionString(this));
 
       await administrationClient.createDistributionPolicy(
         distributionPolicyId,

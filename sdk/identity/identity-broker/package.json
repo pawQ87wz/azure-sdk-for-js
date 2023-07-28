@@ -85,7 +85,7 @@
     "typescript": "~5.0.0",
     "sinon": "^17.0.0",
     "wtfnode": "0.9.1",
-    "prettier": "^2.8.8"
+    "prettier": "^3.0.0"
   },
   "//sampleConfiguration": {
     "productName": "Azure Identity Brokered Auth Plugin",

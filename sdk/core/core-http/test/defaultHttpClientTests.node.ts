@@ -367,12 +367,10 @@ describe("defaultHttpClient (node)", function () {
     request2.proxySettings = proxySettings;
     const client = new DefaultHttpClient();
 
-    const requestInit1: Partial<RequestInit & { agent?: any }> = await client.prepareRequest(
-      request1
-    );
-    const requestInit2: Partial<RequestInit & { agent?: any }> = await client.prepareRequest(
-      request2
-    );
+    const requestInit1: Partial<RequestInit & { agent?: any }> =
+      await client.prepareRequest(request1);
+    const requestInit2: Partial<RequestInit & { agent?: any }> =
+      await client.prepareRequest(request2);
     assert.deepStrictEqual(requestInit1.agent, requestInit2.agent);
   });
 
@@ -393,12 +391,10 @@ describe("defaultHttpClient (node)", function () {
     };
     const client = new DefaultHttpClient();
 
-    const requestInit1: Partial<RequestInit & { agent?: any }> = await client.prepareRequest(
-      request1
-    );
-    const requestInit2: Partial<RequestInit & { agent?: any }> = await client.prepareRequest(
-      request2
-    );
+    const requestInit1: Partial<RequestInit & { agent?: any }> =
+      await client.prepareRequest(request1);
+    const requestInit2: Partial<RequestInit & { agent?: any }> =
+      await client.prepareRequest(request2);
     assert.notStrictEqual(requestInit1.agent, requestInit2.agent);
     assert.notEqual(requestInit1.agent.proxyOptions.host, requestInit2.agent.proxyOptions.host);
     assert.notEqual(requestInit1.agent.proxyOptions.port, requestInit2.agent.proxyOptions.port);
@@ -420,12 +416,10 @@ describe("defaultHttpClient (node)", function () {
     request2.proxySettings = { host: "host1", port: 8001 };
     const client = new DefaultHttpClient();
 
-    const requestInit1: Partial<RequestInit & { agent?: any }> = await client.prepareRequest(
-      request1
-    );
-    const requestInit2: Partial<RequestInit & { agent?: any }> = await client.prepareRequest(
-      request2
-    );
+    const requestInit1: Partial<RequestInit & { agent?: any }> =
+      await client.prepareRequest(request1);
+    const requestInit2: Partial<RequestInit & { agent?: any }> =
+      await client.prepareRequest(request2);
     assert.notStrictEqual(requestInit1.agent, requestInit2.agent);
     assert.notEqual(
       requestInit1.agent.proxyOptions.proxyAuth,

@@ -92,8 +92,8 @@ describe("Certificates client - LRO - certificate operation", () => {
     const completeCertificate: KeyVaultCertificateWithPolicy = await resumePoller.pollUntilDone();
     assert.equal(completeCertificate.name, certificateName);
 
-    const operation: CertificateOperation = await resumePoller.getOperationState()
-      .certificateOperation!;
+    const operation: CertificateOperation =
+      await resumePoller.getOperationState().certificateOperation!;
     assert.equal(operation.status, "completed");
     assert.ok(resumePoller.getOperationState().isCompleted);
   });

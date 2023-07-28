@@ -411,7 +411,7 @@ export class Recorder {
    */
   public configureClientOptions<
     T,
-    U extends { position: "perCall" | "perRetry"; policy: unknown } = AdditionalPolicyConfig
+    U extends { position: "perCall" | "perRetry"; policy: unknown } = AdditionalPolicyConfig,
   >(options: T & { additionalPolicies?: U[] }): T & { additionalPolicies?: U[] } {
     if (isLiveMode()) return options;
     if (!options.additionalPolicies) options.additionalPolicies = [];

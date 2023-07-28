@@ -34,7 +34,10 @@ import { getEmptyCosmosDiagnostics, withDiagnostics } from "../../utils/diagnost
  * do this once on application start up.
  */
 export class Containers {
-  constructor(public readonly database: Database, private readonly clientContext: ClientContext) {}
+  constructor(
+    public readonly database: Database,
+    private readonly clientContext: ClientContext
+  ) {}
 
   /**
    * Queries all containers.

@@ -93,12 +93,12 @@ describe("Streaming with sessions", () => {
               }
             )
         : entityNames.queue
-        ? await serviceBusClient.acceptSession(entityNames.queue, sessionId)
-        : await serviceBusClient.acceptSession(
-            entityNames.topic!,
-            entityNames.subscription!,
-            sessionId
-          )
+          ? await serviceBusClient.acceptSession(entityNames.queue, sessionId)
+          : await serviceBusClient.acceptSession(
+              entityNames.topic!,
+              entityNames.subscription!,
+              sessionId
+            )
     );
   }
 

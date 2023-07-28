@@ -1289,8 +1289,8 @@ export function fromServiceAlertConfiguration(
         c.anomalyScopeType === "All"
           ? { scopeType: "All" }
           : c.anomalyScopeType === "Dimension"
-          ? { scopeType: "Dimension", seriesGroupInScope: c.dimensionAnomalyScope!.dimension }
-          : { scopeType: "TopN", topNAnomalyScope: c.topNAnomalyScope! };
+            ? { scopeType: "Dimension", seriesGroupInScope: c.dimensionAnomalyScope!.dimension }
+            : { scopeType: "TopN", topNAnomalyScope: c.topNAnomalyScope! };
       return {
         detectionConfigurationId: c.anomalyDetectionConfigurationId,
         alertScope,
@@ -1319,11 +1319,11 @@ export function toServiceAlertConfiguration(
         c.alertScope.scopeType === "All"
           ? { anomalyScopeType: "All" }
           : c.alertScope.scopeType === "Dimension"
-          ? {
-              anomalyScopeType: "Dimension",
-              dimensionAnomalyScope: { dimension: c.alertScope.seriesGroupInScope },
-            }
-          : { anomalyScopeType: "TopN", topNAnomalyScope: c.alertScope.topNAnomalyScope };
+            ? {
+                anomalyScopeType: "Dimension",
+                dimensionAnomalyScope: { dimension: c.alertScope.seriesGroupInScope },
+              }
+            : { anomalyScopeType: "TopN", topNAnomalyScope: c.alertScope.topNAnomalyScope };
       return {
         anomalyDetectionConfigurationId: c.detectionConfigurationId,
         anomalyScopeType: alertScope.anomalyScopeType as ServiceAnomalyScope,
@@ -1352,11 +1352,11 @@ export function toServiceAlertConfigurationPatch(
         c.alertScope.scopeType === "All"
           ? { anomalyScopeType: "All" }
           : c.alertScope.scopeType === "Dimension"
-          ? {
-              anomalyScopeType: "Dimension",
-              dimensionAnomalyScope: { dimension: c.alertScope.seriesGroupInScope },
-            }
-          : { anomalyScopeType: "TopN", topNAnomalyScope: c.alertScope.topNAnomalyScope };
+            ? {
+                anomalyScopeType: "Dimension",
+                dimensionAnomalyScope: { dimension: c.alertScope.seriesGroupInScope },
+              }
+            : { anomalyScopeType: "TopN", topNAnomalyScope: c.alertScope.topNAnomalyScope };
       return {
         anomalyDetectionConfigurationId: c.detectionConfigurationId,
         anomalyScopeType: alertScope.anomalyScopeType as ServiceAnomalyScope,

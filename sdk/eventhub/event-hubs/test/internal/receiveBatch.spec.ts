@@ -70,9 +70,8 @@ testWithServiceTypes((serviceVersion) => {
     describe("EventHubConsumer receiveBatch", function (): void {
       it("should not lose messages on error", async () => {
         const partitionId = partitionIds[0];
-        const { lastEnqueuedSequenceNumber } = await producerClient.getPartitionProperties(
-          partitionId
-        );
+        const { lastEnqueuedSequenceNumber } =
+          await producerClient.getPartitionProperties(partitionId);
 
         // Ensure the receiver only looks at new messages.
         const startPosition: EventPosition = {
@@ -126,9 +125,8 @@ testWithServiceTypes((serviceVersion) => {
 
       it("should not lose messages between retries", async () => {
         const partitionId = partitionIds[0];
-        const { lastEnqueuedSequenceNumber } = await producerClient.getPartitionProperties(
-          partitionId
-        );
+        const { lastEnqueuedSequenceNumber } =
+          await producerClient.getPartitionProperties(partitionId);
 
         // Ensure the receiver only looks at new messages.
         const startPosition: EventPosition = {

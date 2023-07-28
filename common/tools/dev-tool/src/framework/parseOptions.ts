@@ -15,10 +15,10 @@ const { debug: parseDebug, error: parseError } = createPrinter("parseOptions");
 export type MaybeMultiple<P, T> = unknown extends P
   ? T | T[]
   : P extends undefined
-  ? T
-  : P extends true
-  ? T[]
-  : T;
+    ? T
+    : P extends true
+      ? T[]
+      : T;
 
 /**
  * The real type of an option parsed from an OptionDescription
@@ -28,8 +28,8 @@ export type OptionFor<Opt extends CommandOptions[string]> = MaybeMultiple<
   Opt extends StringOptionDescription
     ? string
     : Opt extends BooleanOptionDescription
-    ? boolean
-    : string | boolean
+      ? boolean
+      : string | boolean
 >;
 
 /**

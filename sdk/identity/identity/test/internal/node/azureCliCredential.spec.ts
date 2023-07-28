@@ -281,8 +281,8 @@ az login --scope https://test.windows.net/.default`;
       inputScope === ""
         ? "empty string"
         : inputScope === "\0"
-        ? "null character"
-        : `"${inputScope}"`;
+          ? "null character"
+          : `"${inputScope}"`;
     it(`rejects invalid scope of ${testCase}`, async function () {
       const credential = new AzureCliCredential();
       await assert.isRejected(

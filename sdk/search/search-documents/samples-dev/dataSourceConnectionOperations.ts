@@ -41,9 +41,8 @@ async function getAndUpdateDataSourceConnection(
   client: SearchIndexerClient
 ) {
   console.log(`Get And Update DS Connection Operation`);
-  const ds: SearchIndexerDataSourceConnection = await client.getDataSourceConnection(
-    dataSourceConnectionName
-  );
+  const ds: SearchIndexerDataSourceConnection =
+    await client.getDataSourceConnection(dataSourceConnectionName);
   ds.container.name = "Listings_5K_KingCounty_WA";
   console.log(`Updating Container Name of Datasource Connection ${dataSourceConnectionName}`);
   await client.createOrUpdateDataSourceConnection(ds);

@@ -2133,9 +2133,8 @@ describe("DirectoryClient - AllowingTrailingDots - False", () => {
     const subDirName = recorder.variable("subdir", getUniqueName("subdir"));
     const subDirNameWithDots = subDirName + ".";
 
-    const { directoryClient: subDirClient } = await dirClient.createSubdirectory(
-      subDirNameWithDots
-    );
+    const { directoryClient: subDirClient } =
+      await dirClient.createSubdirectory(subDirNameWithDots);
 
     let foundDir = false;
     for await (const item of dirClient.listFilesAndDirectories()) {

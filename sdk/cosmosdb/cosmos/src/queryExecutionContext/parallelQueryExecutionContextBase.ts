@@ -249,9 +249,8 @@ export abstract class ParallelQueryExecutionContextBase implements ExecutionCont
     // Removing the invalid documentProducer from the orderByPQ
     const parentDocumentProducer = this.orderByPQ.deq();
     try {
-      const replacementPartitionKeyRanges: any[] = await this._getReplacementPartitionKeyRanges(
-        parentDocumentProducer
-      );
+      const replacementPartitionKeyRanges: any[] =
+        await this._getReplacementPartitionKeyRanges(parentDocumentProducer);
       const replacementDocumentProducers: DocumentProducer[] = [];
       // Create the replacement documentProducers
       replacementPartitionKeyRanges.forEach((partitionKeyRange) => {
@@ -443,9 +442,8 @@ export abstract class ParallelQueryExecutionContextBase implements ExecutionCont
           // we need to put back the document producer to the queue if it has more elements.
           // the lock will be released after we know document producer must be put back in the queue or not
           try {
-            const { result: afterItem, headers: otherHeaders } = await documentProducer.current(
-              diagnosticNode
-            );
+            const { result: afterItem, headers: otherHeaders } =
+              await documentProducer.current(diagnosticNode);
             this._mergeWithActiveResponseHeaders(otherHeaders);
             if (afterItem === undefined) {
               // no more results is left in this document producer

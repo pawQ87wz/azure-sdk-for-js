@@ -586,8 +586,8 @@ export class SearchIndexerClient {
         typeof indexer === "string"
           ? undefined
           : options.onlyIfUnchanged
-          ? indexer.etag
-          : undefined;
+            ? indexer.etag
+            : undefined;
 
       await this.client.indexers.delete(indexerName, {
         ...updatedOptions,
@@ -624,8 +624,8 @@ export class SearchIndexerClient {
         typeof dataSourceConnection === "string"
           ? undefined
           : options.onlyIfUnchanged
-          ? dataSourceConnection.etag
-          : undefined;
+            ? dataSourceConnection.etag
+            : undefined;
 
       await this.client.dataSources.delete(dataSourceConnectionName, {
         ...updatedOptions,
@@ -658,8 +658,8 @@ export class SearchIndexerClient {
         typeof skillset === "string"
           ? undefined
           : options.onlyIfUnchanged
-          ? skillset.etag
-          : undefined;
+            ? skillset.etag
+            : undefined;
 
       await this.client.skillsets.delete(skillsetName, {
         ...updatedOptions,

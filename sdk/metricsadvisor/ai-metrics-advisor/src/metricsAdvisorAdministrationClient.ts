@@ -233,10 +233,10 @@ export class MetricsAdvisorAdministrationClient {
           rollupSettings?.rollupType === "AutoRollup"
             ? "NeedRollup"
             : rollupSettings?.rollupType === "AlreadyRollup"
-            ? "AlreadyRollup"
-            : rollupSettings?.rollupType === "NoRollup"
-            ? "NoRollup"
-            : undefined;
+              ? "AlreadyRollup"
+              : rollupSettings?.rollupType === "NoRollup"
+                ? "NoRollup"
+                : undefined;
         const rollUpColumns: string[] | undefined =
           rollupSettings?.rollupType === "AutoRollup"
             ? rollupSettings.autoRollupGroupByColumnNames

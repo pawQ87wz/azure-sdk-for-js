@@ -88,8 +88,8 @@ export function createAccumulator<Spec extends AccumulatorSpecTemplate>(
         const values = Array.isArray(thisResult)
           ? thisResult
           : thisResult !== undefined
-          ? [thisResult]
-          : [];
+            ? [thisResult]
+            : [];
         result[name].push(...values);
       }
     }

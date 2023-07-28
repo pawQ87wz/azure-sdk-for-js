@@ -147,13 +147,13 @@ export function supports(
     return run.isSupported
       ? match
       : isLiveMode()
-      ? // only append skip reason to titles in live TEST_MODE.
-        // Record and playback depends on titles for recording file names so keeping them
-        // in order to be compatible with existing recordings.
-        function (title: string, fn: Mocha.Func | Mocha.AsyncFunc) {
-          return skip(`${title} (${run.skipReason})`, fn);
-        }
-      : skip;
+        ? // only append skip reason to titles in live TEST_MODE.
+          // Record and playback depends on titles for recording file names so keeping them
+          // in order to be compatible with existing recordings.
+          function (title: string, fn: Mocha.Func | Mocha.AsyncFunc) {
+            return skip(`${title} (${run.skipReason})`, fn);
+          }
+        : skip;
   };
 
   const it = either(supports.global.it, supports.global.xit);

@@ -25,9 +25,8 @@ matrix([[true, false]], async function (useAad: boolean) {
         ({ identityClient, relayClient, recorder } =
           await createRecordedCommunicationRelayClientWithToken(this));
       } else {
-        ({ identityClient, relayClient, recorder } = await createRecordedCommunicationRelayClient(
-          this
-        ));
+        ({ identityClient, relayClient, recorder } =
+          await createRecordedCommunicationRelayClient(this));
       }
     });
 

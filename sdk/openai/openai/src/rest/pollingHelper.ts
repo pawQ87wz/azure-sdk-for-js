@@ -33,7 +33,7 @@ import {
 export async function getLongRunningPoller<
   TResult extends
     | BeginAzureBatchImageGenerationLogicalResponse
-    | BeginAzureBatchImageGenerationDefaultResponse
+    | BeginAzureBatchImageGenerationDefaultResponse,
 >(
   client: Client,
   initialResponse:

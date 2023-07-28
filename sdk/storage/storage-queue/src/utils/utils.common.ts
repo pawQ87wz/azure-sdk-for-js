@@ -502,8 +502,8 @@ export type WithResponse<T, Headers = undefined, Body = undefined> = T &
   (Body extends object
     ? ResponseWithBody<Headers, Body>
     : Headers extends object
-    ? ResponseWithHeaders<Headers>
-    : ResponseLike);
+      ? ResponseWithHeaders<Headers>
+      : ResponseLike);
 
 /**
  * A typesafe helper for ensuring that a given response object has

@@ -99,9 +99,8 @@ versionsToTest(serviceApiVersions, {}, (serviceVersion) => {
         queueProperties.forwardTo = willBeForwardedTo.queue!;
         await serviceBusAtomManagementClient.updateQueue(queueProperties);
 
-        const receiver = await serviceBusClient.test.createReceiveAndDeleteReceiver(
-          willBeForwardedTo
-        );
+        const receiver =
+          await serviceBusClient.test.createReceiveAndDeleteReceiver(willBeForwardedTo);
         const sender = await serviceBusClient.test.createSender(willForward);
 
         await sender.sendMessages({
@@ -131,9 +130,8 @@ versionsToTest(serviceApiVersions, {}, (serviceVersion) => {
         subscriptionProperties.forwardTo = willBeForwardedTo.queue!;
         await serviceBusAtomManagementClient.updateSubscription(subscriptionProperties);
 
-        const receiver = await serviceBusClient.test.createReceiveAndDeleteReceiver(
-          willBeForwardedTo
-        );
+        const receiver =
+          await serviceBusClient.test.createReceiveAndDeleteReceiver(willBeForwardedTo);
         const sender = await serviceBusClient.test.createSender(willForward);
 
         await sender.sendMessages({
@@ -2688,15 +2686,13 @@ versionsToTest(serviceApiVersions, {}, (serviceVersion) => {
     ): Promise<any> {
       switch (testEntityType) {
         case EntityType.QUEUE: {
-          const queueResponse = await serviceBusAtomManagementClient.getQueueRuntimeProperties(
-            entityPath
-          );
+          const queueResponse =
+            await serviceBusAtomManagementClient.getQueueRuntimeProperties(entityPath);
           return queueResponse;
         }
         case EntityType.TOPIC: {
-          const topicResponse = await serviceBusAtomManagementClient.getTopicRuntimeProperties(
-            entityPath
-          );
+          const topicResponse =
+            await serviceBusAtomManagementClient.getTopicRuntimeProperties(entityPath);
           return topicResponse;
         }
         case EntityType.SUBSCRIPTION: {
@@ -2722,15 +2718,13 @@ versionsToTest(serviceApiVersions, {}, (serviceVersion) => {
     ): Promise<any> {
       switch (testEntityType) {
         case EntityType.QUEUE: {
-          const queueResponse = await serviceBusAtomManagementClient[
-            "getQueuesRuntimeProperties"
-          ]();
+          const queueResponse =
+            await serviceBusAtomManagementClient["getQueuesRuntimeProperties"]();
           return queueResponse;
         }
         case EntityType.TOPIC: {
-          const topicResponse = await serviceBusAtomManagementClient[
-            "getTopicsRuntimeProperties"
-          ]();
+          const topicResponse =
+            await serviceBusAtomManagementClient["getTopicsRuntimeProperties"]();
           return topicResponse;
         }
         case EntityType.SUBSCRIPTION: {
@@ -2739,9 +2733,8 @@ versionsToTest(serviceApiVersions, {}, (serviceVersion) => {
               "TestError: Topic path must be passed when invoking tests on subscriptions"
             );
           }
-          const subscriptionResponse = await serviceBusAtomManagementClient[
-            "getSubscriptionsRuntimeProperties"
-          ](topicPath);
+          const subscriptionResponse =
+            await serviceBusAtomManagementClient["getSubscriptionsRuntimeProperties"](topicPath);
           return subscriptionResponse;
         }
       }

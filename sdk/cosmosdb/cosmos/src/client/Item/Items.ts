@@ -65,7 +65,10 @@ export class Items {
    * @param container - The parent container.
    * @hidden
    */
-  constructor(public readonly container: Container, private readonly clientContext: ClientContext) {
+  constructor(
+    public readonly container: Container,
+    private readonly clientContext: ClientContext
+  ) {
     this.partitionKeyRangeCache = new PartitionKeyRangeCache(this.clientContext);
   }
 

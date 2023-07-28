@@ -416,9 +416,8 @@ describe("Containers", function (this: Suite) {
         },
       };
 
-      const { resource: containerWithIndexingPolicyDef } = await database.containers.create(
-        containerDefinition
-      );
+      const { resource: containerWithIndexingPolicyDef } =
+        await database.containers.create(containerDefinition);
 
       // Two included paths.
       assert.equal(
@@ -457,9 +456,8 @@ describe("Containers", function (this: Suite) {
 
       // create container with no indexing policy specified.
       const containerDefinition01: ContainerDefinition = { id: "TestCreateDefaultPolicy01" };
-      const { resource: containerNoIndexPolicyDef } = await database.containers.create(
-        containerDefinition01
-      );
+      const { resource: containerNoIndexPolicyDef } =
+        await database.containers.create(containerDefinition01);
       checkDefaultIndexingPolicyPaths(containerNoIndexPolicyDef["indexingPolicy"]);
 
       // create container with default policy.
@@ -467,9 +465,8 @@ describe("Containers", function (this: Suite) {
         id: "TestCreateDefaultPolicy03",
         indexingPolicy: {},
       };
-      const { resource: containerDefaultPolicy } = await database.containers.create(
-        containerDefinition03
-      );
+      const { resource: containerDefaultPolicy } =
+        await database.containers.create(containerDefinition03);
       checkDefaultIndexingPolicyPaths((containerDefaultPolicy as any)["indexingPolicy"]);
 
       // create container with indexing policy missing indexes.
@@ -483,9 +480,8 @@ describe("Containers", function (this: Suite) {
           ],
         },
       };
-      const { resource: containerMissingIndexes } = await database.containers.create(
-        containerDefinition04
-      );
+      const { resource: containerMissingIndexes } =
+        await database.containers.create(containerDefinition04);
       checkDefaultIndexingPolicyPaths((containerMissingIndexes as any)["indexingPolicy"]);
 
       // create container with indexing policy missing precision.
@@ -509,9 +505,8 @@ describe("Containers", function (this: Suite) {
           ],
         },
       };
-      const { resource: containerMissingPrecision } = await database.containers.create(
-        containerDefinition05
-      );
+      const { resource: containerMissingPrecision } =
+        await database.containers.create(containerDefinition05);
       checkDefaultIndexingPolicyPaths((containerMissingPrecision as any)["indexingPolicy"]);
     });
   });

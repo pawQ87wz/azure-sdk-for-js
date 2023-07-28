@@ -671,8 +671,8 @@ export function fromRheaMessage(
                   typeof delivery.tag === "string" ? Buffer.from(delivery.tag) : delivery.tag
                 )
               : typeof delivery.tag === "string"
-              ? Buffer.from(delivery.tag)
-              : delivery.tag
+                ? Buffer.from(delivery.tag)
+                : delivery.tag
           )
         : undefined,
     ...sbmsg,

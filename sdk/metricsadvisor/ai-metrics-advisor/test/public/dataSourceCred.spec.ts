@@ -149,9 +149,8 @@ describe("DataSourceCredential", () => {
         tenantId: "tenant-id",
       };
 
-      const createdServicePrincipalCred = await client.createDataSourceCredential(
-        servicePrincipalCred
-      );
+      const createdServicePrincipalCred =
+        await client.createDataSourceCredential(servicePrincipalCred);
       assert.ok(createdServicePrincipalCred.id, "Expecting valid sql server dataSource credential");
       createdServicePrincipalCredId = createdServicePrincipalCred.id!;
       assert.equal(createdServicePrincipalCred.name, servicePrincipalCred.name);
@@ -198,9 +197,8 @@ describe("DataSourceCredential", () => {
         servicePrincipalSecretNameInKV: "service-principal-secret-name-in-kv",
       };
 
-      const createdServicePrincipalInKVCred = await client.createDataSourceCredential(
-        servicePrincipalInKVCred
-      );
+      const createdServicePrincipalInKVCred =
+        await client.createDataSourceCredential(servicePrincipalInKVCred);
       assert.ok(createdServicePrincipalInKVCred.id, "Expecting valid dataSource credential");
       createdServicePrincipalInKVCredId = createdServicePrincipalInKVCred.id!;
       assert.equal(createdServicePrincipalInKVCred.name, servicePrincipalInKVCred.name);

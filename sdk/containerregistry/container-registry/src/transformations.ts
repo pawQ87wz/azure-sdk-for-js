@@ -59,8 +59,8 @@ export function toServiceTagOrderBy(orderBy?: ArtifactTagOrder): ServiceTagOrder
   return orderBy === "LastUpdatedOnAscending"
     ? "timeasc"
     : orderBy === "LastUpdatedOnDescending"
-    ? "timedesc"
-    : undefined;
+      ? "timedesc"
+      : undefined;
 }
 
 export function toServiceManifestOrderBy(
@@ -69,6 +69,6 @@ export function toServiceManifestOrderBy(
   return orderBy === "LastUpdatedOnAscending"
     ? "timeasc"
     : orderBy === "LastUpdatedOnDescending"
-    ? "timedesc"
-    : undefined;
+      ? "timedesc"
+      : undefined;
 }

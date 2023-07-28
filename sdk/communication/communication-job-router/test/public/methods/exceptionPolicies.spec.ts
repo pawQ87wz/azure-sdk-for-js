@@ -19,9 +19,8 @@ describe("JobRouterClient", function () {
 
   describe("Exception Policy Operations", function () {
     this.beforeEach(async function (this: Context) {
-      ({ administrationClient, recorder } = await createRecordedRouterClientWithConnectionString(
-        this
-      ));
+      ({ administrationClient, recorder } =
+        await createRecordedRouterClientWithConnectionString(this));
     });
 
     this.afterEach(async function (this: Context) {

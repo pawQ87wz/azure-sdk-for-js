@@ -268,8 +268,8 @@ describe("AzurePowerShellCredential", function () {
       inputScope === ""
         ? "empty string"
         : inputScope === "\0"
-        ? "null character"
-        : `"${inputScope}"`;
+          ? "null character"
+          : `"${inputScope}"`;
     it(`rejects invalid scope of ${testCase}`, async function () {
       const credential = new AzurePowerShellCredential();
       await assert.isRejected(

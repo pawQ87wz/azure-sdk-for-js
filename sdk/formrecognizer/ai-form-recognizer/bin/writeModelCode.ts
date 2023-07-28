@@ -102,11 +102,11 @@ export async function writeModelCode(model: DocumentModelDetails, test: boolean)
         ? // In the case of multiple variants, a union
           variantNames.map((n) => `${EOL}  | ${n}`).join("")
         : variantNames.length === 1
-        ? // For a single variant, just emit its name.
-          ` ${variantNames[0]}`
-        : // This should probably be unreachable, since there's no case where
-          // `hasDocuments && variantNames.length === 0`, but we'll still emit "never" just in case.
-          " never";
+          ? // For a single variant, just emit its name.
+            ` ${variantNames[0]}`
+          : // This should probably be unreachable, since there's no case where
+            // `hasDocuments && variantNames.length === 0`, but we'll still emit "never" just in case.
+            " never";
 
     // Finally, add the type alias for the type of a Document
     contents += `export type ${documentTypeName} =${documentType};${EOL + EOL}`;

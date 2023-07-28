@@ -198,9 +198,8 @@ export class NodeFetchHttpClient implements HttpClient {
       body = uploadReportStream;
     }
 
-    const platformSpecificRequestInit: Partial<RequestInit> = await this.prepareRequest(
-      httpRequest
-    );
+    const platformSpecificRequestInit: Partial<RequestInit> =
+      await this.prepareRequest(httpRequest);
 
     const requestInit: RequestInit = {
       body: body,

@@ -24,7 +24,7 @@ import {
  * @returns - A poller object to poll for operation state updates and eventually get the final response.
  */
 export async function getLongRunningPoller<
-  TResult extends CreateJobLogicalResponse | CreateJobDefaultResponse
+  TResult extends CreateJobLogicalResponse | CreateJobDefaultResponse,
 >(
   client: Client,
   initialResponse: CreateJob200Response | CreateJob202Response | CreateJobDefaultResponse,

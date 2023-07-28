@@ -70,10 +70,10 @@ type LinkOptionsT<LinkT extends Receiver | AwaitableSender | RequestResponseLink
   LinkT extends Receiver
     ? ReceiverOptions
     : LinkT extends AwaitableSender
-    ? AwaitableSenderOptions
-    : LinkT extends RequestResponseLink
-    ? RequestResponseLinkOptions
-    : never;
+      ? AwaitableSenderOptions
+      : LinkT extends RequestResponseLink
+        ? RequestResponseLinkOptions
+        : never;
 
 /**
  * @internal
@@ -82,10 +82,10 @@ type LinkTypeT<LinkT extends Receiver | AwaitableSender | RequestResponseLink> =
   LinkT extends Receiver
     ? ReceiverType
     : LinkT extends AwaitableSender
-    ? "sender" // sender
-    : LinkT extends RequestResponseLink
-    ? "mgmt" // management link
-    : never;
+      ? "sender" // sender
+      : LinkT extends RequestResponseLink
+        ? "mgmt" // management link
+        : never;
 
 /**
  * @internal

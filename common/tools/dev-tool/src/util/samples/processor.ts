@@ -113,7 +113,7 @@ export async function processSources(
 
     // Where the work happens. This runs the conversion step from the ts-to-js command with the visitor we've defined
     // above and the CommonJS transforms (see transforms.ts).
-    const jsModuleText = convert(sourceText, {
+    const jsModuleText = await convert(sourceText, {
       fileName: source,
       transformers: {
         before: [sourceProcessor],
@@ -355,16 +355,16 @@ function processExportDefault(
             decl.members
           )
         : decl.body === undefined // This is a strange case that I assume has to do with overload declarations.
-        ? undefined
-        : factory.createFunctionExpression(
-            updatedModifiers as readonly ts.Modifier[], // it's not legal to decorate function expressions so these should all be modifiers.
-            decl.asteriskToken,
-            undefined,
-            decl.typeParameters,
-            decl.parameters,
-            decl.type,
-            decl.body
-          );
+          ? undefined
+          : factory.createFunctionExpression(
+              updatedModifiers as readonly ts.Modifier[], // it's not legal to decorate function expressions so these should all be modifiers.
+              decl.asteriskToken,
+              undefined,
+              decl.typeParameters,
+              decl.parameters,
+              decl.type,
+              decl.body
+            );
 
       if (initializer) {
         exportEntries.push(factory.createPropertyAssignment("default", initializer));

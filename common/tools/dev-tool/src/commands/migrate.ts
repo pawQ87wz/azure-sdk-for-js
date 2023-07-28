@@ -136,10 +136,10 @@ function printMigrations(migrations: Iterable<Migration>, quiet: boolean): void 
         m.execute && m.validate
           ? "both"
           : m.execute
-          ? "execution"
-          : m.validate
-          ? "validation"
-          : "none";
+            ? "execution"
+            : m.validate
+              ? "validation"
+              : "none";
 
       log.info(`${m.id} - ${m.description}`);
       log.info(`  Date: ${m.date.toLocaleDateString()}`);

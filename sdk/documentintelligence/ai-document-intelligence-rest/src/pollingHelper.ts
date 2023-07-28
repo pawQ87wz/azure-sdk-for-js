@@ -38,28 +38,28 @@ import {
  * @returns - A poller object to poll for operation state updates and eventually get the final response.
  */
 export async function getLongRunningPoller<
-  TResult extends BuildModelLogicalResponse | BuildModelDefaultResponse
+  TResult extends BuildModelLogicalResponse | BuildModelDefaultResponse,
 >(
   client: Client,
   initialResponse: BuildModel202Response | BuildModelDefaultResponse,
   options?: CreateHttpPollerOptions<TResult, OperationState<TResult>>
 ): Promise<SimplePollerLike<OperationState<TResult>, TResult>>;
 export async function getLongRunningPoller<
-  TResult extends ComposeModelLogicalResponse | ComposeModelDefaultResponse
+  TResult extends ComposeModelLogicalResponse | ComposeModelDefaultResponse,
 >(
   client: Client,
   initialResponse: ComposeModel202Response | ComposeModelDefaultResponse,
   options?: CreateHttpPollerOptions<TResult, OperationState<TResult>>
 ): Promise<SimplePollerLike<OperationState<TResult>, TResult>>;
 export async function getLongRunningPoller<
-  TResult extends CopyModelToLogicalResponse | CopyModelToDefaultResponse
+  TResult extends CopyModelToLogicalResponse | CopyModelToDefaultResponse,
 >(
   client: Client,
   initialResponse: CopyModelTo202Response | CopyModelToDefaultResponse,
   options?: CreateHttpPollerOptions<TResult, OperationState<TResult>>
 ): Promise<SimplePollerLike<OperationState<TResult>, TResult>>;
 export async function getLongRunningPoller<
-  TResult extends BuildClassifierLogicalResponse | BuildClassifierDefaultResponse
+  TResult extends BuildClassifierLogicalResponse | BuildClassifierDefaultResponse,
 >(
   client: Client,
   initialResponse: BuildClassifier202Response | BuildClassifierDefaultResponse,
@@ -68,7 +68,7 @@ export async function getLongRunningPoller<
 export async function getLongRunningPoller<
   TResult extends
     | AnalyzeDocumentFromStreamLogicalResponse
-    | AnalyzeDocumentFromStreamDefaultResponse
+    | AnalyzeDocumentFromStreamDefaultResponse,
 >(
   client: Client,
   initialResponse: AnalyzeDocumentFromStream202Response | AnalyzeDocumentFromStreamDefaultResponse,
@@ -77,7 +77,7 @@ export async function getLongRunningPoller<
 export async function getLongRunningPoller<
   TResult extends
     | ClassifyDocumentFromStreamLogicalResponse
-    | ClassifyDocumentFromStreamDefaultResponse
+    | ClassifyDocumentFromStreamDefaultResponse,
 >(
   client: Client,
   initialResponse:
