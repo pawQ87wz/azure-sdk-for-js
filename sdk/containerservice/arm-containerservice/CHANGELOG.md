@@ -1,15 +1,5 @@
 # Release History
-
-## 19.5.0-beta.2 (Unreleased)
-
-### Features Added
-
-### Breaking Changes
-
-### Bugs Fixed
-
-### Other Changes
-
+    
 ## 19.5.0-beta.1 (2023-11-03)
     
 **Features**
